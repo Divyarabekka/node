@@ -4,11 +4,9 @@ const mongoose = require("mongoose");
 const Mentor = require("./Mentor");
 const Student = require("./Student");
 
-require('dotenv').config;
-
 const app = express(); 
-const PORT = process.env.PORT;
-const DB_URL = process.env.DB_URL;
+const PORT = 3000;
+const DB_URL = "mongodb+srv://rabekka25:raja143divya@cluster1.arajehh.mongodb.net/";
 
 app.use(bodyParser.json()); // For parsing JSON bodies
 

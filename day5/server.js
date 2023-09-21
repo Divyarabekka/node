@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const Mentor = require("./Mentor");
-const Student = require("./Student");
+const Student = require("./model/Student");
+const Mentor= require("./model/Mentor");
 
 const app = express(); 
+//mongoose.set('strictQuery', false);
+
 const PORT = 3000;
 const DB_URL = "mongodb+srv://rabekka25:raja143divya@cluster1.arajehh.mongodb.net/";
 
@@ -19,7 +21,7 @@ mongoose
 // CREATE Mentor
 app.post("/mentor", async (req, res) => {
     try {
-      const mentor = new Mentor(req.body);
+      const mentor= new Mentor(req.body);
       await mentor.save();
       res.send(mentor);
     } catch (error) {
